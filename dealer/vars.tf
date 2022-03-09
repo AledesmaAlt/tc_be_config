@@ -1,6 +1,6 @@
 variable "bucket" {
   type = string
-  default = "mybucket"
+  default = "mybucketInDealer0903"
 }
 
 variable "region" {
