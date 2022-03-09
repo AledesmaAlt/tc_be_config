@@ -14,7 +14,7 @@ resource "aws_s3_bucket" "bucket1" {
 
 resource "aws_s3_bucket_acl" "bucket1acl" {
   bucket = aws_s3_bucket.bucket1.id
-  acl    = "public.read"
+  acl    = "public-read"
 }
 
 resource "aws_s3_bucket_website_configuration" "bucket1website" {
@@ -24,10 +24,10 @@ resource "aws_s3_bucket_website_configuration" "bucket1website" {
   }
 }
 
-resource "aws_s3_bucket_object" "object1" {
+resource "aws_s3_object" "object1" {
   bucket = aws_s3_bucket.bucket1.id
   key = "index.html"
-  acl = "public.read"
+  acl = "public-read"
   content = var.content
   content_type = "text/html"
 }
